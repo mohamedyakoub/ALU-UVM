@@ -1,0 +1,27 @@
+package alu_pkg;
+    import uvm_pkg::*;
+    `include "uvm_macros.svh"
+    `include "alu_seq_item.sv"
+    `include "cfg.sv"
+    `include "sequencer.sv"
+    `include "v_seqr.sv"
+    `include "Seq/rst_seq.sv"
+    `include "Seq/alu_base_seq.sv"
+    `include "Seq/add_seq.sv"
+    `include "Seq/sub_seq.sv"
+    `include "Seq/Arith_seq.sv"
+    `include "Seq/Logic_seq.sv"
+    `include "Seq/v_seq.sv"
+    `include "monitor.sv"
+    `include "driver.sv"
+    `include "agent.sv"
+    `include "coverage.sv"  
+    `include "scoreboard.sv"
+    `include "enviroment.sv"
+    `include "Tests/Normal_test.sv"
+    `include "Tests/add_test.sv"
+    `include "Tests/sub_test.sv"
+    `include "Tests/Arith_test.sv"
+    `include "Tests/Logic_test.sv"
+
+endpackage
