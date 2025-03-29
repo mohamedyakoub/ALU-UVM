@@ -41,26 +41,21 @@ Ensure you have one of the following simulators installed:
 - **QuestaSim**
 - **VCS (Synopsys)**
 
-### Step-by-Step Execution
+### Running 
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/alu-uvm.git
-   cd alu-uvm
-   ```
-2. Compile the UVM Environment (Example: QuestaSim):
-   ```bash
-   vlog -sv tb/*.sv src/*.sv
-   ```
-3. Run the Simulation:
-   ```bash
-   vsim -c -do "run -all" work.top
-   ```
+1. Questasim :
+  There is a run.do file that can be used by using do in questasim transcript
+```
+      do run.do 
+```
+1. Synopsis tools :
+  There is a make file that can be used.
+
 
 ## ✅ Verification Plan
 
 1. **Functional Testing:** Verify all ALU operations (e.g., add, subtract, AND, OR).
-2. **Corner Cases:** Ensure correct handling of edge conditions (e.g., overflow, underflow).
+2. **Corner Cases:** Ensure correct handling of important conditions (e.g., overflow, underflow).
 3. **Random Stimulus:** Randomized operand generation for robust testing.
 
 ## 📊 Coverage
@@ -77,6 +72,6 @@ For questions or contributions, feel free to reach out!
 
 ```
 Your Name
-Email: your@email.com
+Email: mohamedyakoub92001@gmail.com
 ```
 
