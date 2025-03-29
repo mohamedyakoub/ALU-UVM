@@ -48,7 +48,7 @@ Ensure you have one of the following simulators installed:
 ```
       do run.do 
 ```
-1. Synopsis tools :
+1. Synopsys tools :
   There is a make file that can be used.
 
 
