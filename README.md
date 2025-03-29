@@ -10,15 +10,15 @@ The **ALU** performs basic arithmetic and logic operations. This UVM environment
 
 - **UVM Components:**
   - Environment
-  - Generator
+  - Agent
+  - Sequencer
   - Driver
   - Monitor
   - Scoreboard
   - Coverage Collector
-- **Test Scenarios:**
+- **Test Scenarios and Sequences:**
   - Addition, subtraction, and logic operations
   - Randomized stimulus for comprehensive testing
-  - Edge-case verification
 
 ## 📂 Directory Structure
 
@@ -28,8 +28,7 @@ The **ALU** performs basic arithmetic and logic operations. This UVM environment
 │    ├── env/           # UVM Environment
 │    ├── agent/         # Driver, Monitor, Sequencer
 │    ├── tests/         # Test Cases
-│    └── config/        # Configuration Files
-├── sim/                # Simulation Scripts
+│    └── sequences/     # Sequences
 └── README.md           # Project Documentation
 ```
 
