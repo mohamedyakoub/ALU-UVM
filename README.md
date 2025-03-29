@@ -71,7 +71,7 @@ This project is licensed under the MIT License. Feel free to use and modify it.
 For questions or contributions, feel free to reach out!
 
 ```
-Your Name
+Mohamed Yakoub
 Email: mohamedyakoub92001@gmail.com
 ```
 
