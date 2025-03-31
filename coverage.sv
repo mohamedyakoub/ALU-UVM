@@ -7,31 +7,28 @@ class coverage extends uvm_subscriber#(seq_item);
 
         // Coverpoint for A ,B and C to cover the important values
 		A_CP :coverpoint tr.A {
-			bins MAXNEG 	    = {-15};
+			bins MAXNEG 	    = {-16};
 			bins MAXPOS 	    = {15};
 			bins ZERO	    = {0};
 			bins pattern_1 	= {-11};
 			bins pattern_2 	= {10};
-            illegal_bins ILLEGAL= {-16};
 			bins Rest[2]	= default;
 		}
 
 		B_CP :coverpoint tr.B {
-			bins MAXNEG 	    = {-15};
+			bins MAXNEG 	    = {-16};
 			bins MAXPOS 	    = {15};
 			bins ZERO 	    = {0};
 			bins pattern_1 	= {-11};
 			bins pattern_2 	= {10};
-            illegal_bins ILLEGAL= {-16};
 			bins Rest[2]	= default;
 		}
 
         C_CP : coverpoint tr.C{
-            bins MAXNEG     = {-31};
+	    bins MAXNEG     = {-32};
             bins MAXPOS     = {31};
             bins ZERO       = {0};
             bins ONES     = {-1};
-            illegal_bins ILLEGAL = {-32};
             bins Rest[3] = default;
         }
 
