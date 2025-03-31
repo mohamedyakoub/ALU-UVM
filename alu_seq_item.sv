@@ -5,9 +5,8 @@ typedef enum bit [1:0] {XOR_b=0, XNOR_b=1, A_SUB_b=2, B_ADD_b=3} op_b_1;
 class seq_item extends uvm_sequence_item;
     `uvm_object_utils(seq_item)
     parameter MAXPOS    = 15,        // 01111
-    MAXNEG    ='b10001,   
+    MAXNEG    ='b10000,   
     ZERO      ='b0,       
-    ILLEGAL   ='b10000,
     ONES      ='b11111,   
     pattern_1 = 10,       // 01010
     pattern_2 ='b10101;
@@ -33,16 +32,16 @@ class seq_item extends uvm_sequence_item;
     // Arithmetic constraints for A and B
     constraint A_B_arith {
     if(a_op_0==ADD_a || a_op_0==SUB_a || b_op_0==ADD_b1 || b_op_0==ADD_b2 || b_op_1==A_SUB_b || b_op_1== B_ADD_b) {
-    A dist { MAXPOS :/ 20 , ONES:/20 ,ZERO :/ 20 , MAXNEG :/ 20 , [ZERO+1:MAXPOS-1] :/ 20, ILLEGAL :/ 0 ,[MAXNEG+1:ONES-1]:/20 } ; 
-    B dist { MAXPOS :/ 20 , ONES:/20 ,ZERO :/ 20 , MAXNEG :/ 20 , [ZERO+1:MAXPOS-1] :/ 20, ILLEGAL :/ 0 ,[MAXNEG+1:ONES-1]:/20 } ; 
+        A dist { MAXPOS :/ 20 , ONES:/20 ,ZERO :/ 20 , MAXNEG :/ 20 , [ZERO+1:MAXPOS-1] :/ 20, [MAXNEG+1:ONES-1]:/20 } ; 
+        B dist { MAXPOS :/ 20 , ONES:/20 ,ZERO :/ 20 , MAXNEG :/ 20 , [ZERO+1:MAXPOS-1] :/ 20, [MAXNEG+1:ONES-1]:/20 } ; 
     }
     }
 
     // Logic constraints for A and B
     constraint A_B_logic {
     if( !(a_op_0==ADD_a || a_op_0==SUB_a || b_op_0==ADD_b1 || b_op_0==ADD_b2 || b_op_1==A_SUB_b || b_op_1== B_ADD_b)) {
-    A dist {  ILLEGAL :/0, ONES:/20 ,ZERO :/ 20 , pattern_1:/20 , pattern_2:/20 , [ZERO+1:pattern_1-1] :/ 20 , [pattern_1+1:ILLEGAL-1] :/20 ,[ILLEGAL+1:pattern_2-1] :/ 20 , [pattern_2+1:ONES-1] :/ 20  } ; 
-    B dist {  ILLEGAL :/0, ONES:/20 ,ZERO :/ 20 , pattern_1:/20 , pattern_2:/20 , [ZERO+1:pattern_1-1] :/ 20 , [pattern_1+1:ILLEGAL-1] :/20 ,[ILLEGAL+1:pattern_2-1] :/ 20 , [pattern_2+1:ONES-1] :/ 20  } ; 
+    A dist { ONES:/20 ,ZERO :/ 20 , pattern_1:/20 , pattern_2:/20 , [ZERO+1:pattern_1-1] :/ 20 , [pattern_1+1:pattern_2-1] :/ 20 , [pattern_2+1:ONES-1] :/ 20  } ; 
+    B dist { ONES:/20 ,ZERO :/ 20 , pattern_1:/20 , pattern_2:/20 , [ZERO+1:pattern_1-1] :/ 20 , [pattern_1+1:pattern_2-1] :/ 20 , [pattern_2+1:ONES-1] :/ 20  } ; 
     }
     }
 
