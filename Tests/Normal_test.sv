@@ -24,8 +24,8 @@ class Normal_test extends uvm_test;
         super.run_phase(phase);
         `uvm_info("Test", "Running test", UVM_MEDIUM)
         phase.raise_objection(this);
-        base_seq.start(m_env.m_agt.m_sequencer);
-        rst_seq.start(m_env.m_agt.m_sequencer);
+        base_seq.start(m_env.m_agt.m_seqr);
+        rst_seq.start(m_env.m_agt.m_seqr);
         phase.drop_objection(this);
         `uvm_info("Test", "Finished running test", UVM_MEDIUM)
         m_env.m_agt.m_monitor.display();
